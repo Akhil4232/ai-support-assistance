@@ -4,7 +4,6 @@ import os
 
 st.set_page_config(page_title="AI Support Assistant", page_icon="🤖", layout="centered")
 
-# Custom CSS for beautiful UI
 st.markdown("""
 <style>
     .main { background-color: #f8f9fa; }
@@ -21,7 +20,8 @@ st.write("Type a customer message below and let AI detect the sentiment.")
 # Load model
 @st.cache_resource
 def load_model():
-    with open("sentiment_model.pkl", "rb") as f:
+    with open("model.pkl", "rb") as f:
+  
         model = pickle.load(f)
     with open("vectorizer.pkl", "rb") as f:
         vectorizer = pickle.load(f)
